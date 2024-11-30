@@ -1,7 +1,7 @@
 const forumLatest = "https://cdn.freecodecamp.org/curriculum/forum-latest/latest.json";
 const forumTopicUrl = "https://forum.freecodecamp.org/t/";
 const forumCategoryUrl = "https://forum.freecodecamp.org/c/";
-const avatarLinkk = "https://sea1.discourse-cdn.com/freecodecamp";
+const avatarUrl = "https://sea1.discourse-cdn.com/freecodecamp";
 
 const postsContainer = document.getElementById("posts-container");
 
@@ -77,7 +77,8 @@ const avatars = (posters, users) => {
       if (user) {
         const avatar = user.avatar_template.replace(/{size}/, 30);
         const userAvatarUrl = avatar.startsWith("/user_avatar/")
-          ? avatarLinkk.concat(avatar)
+          ? avatarUrl
+	 .concat(avatar)
           : avatar;
         return `<img src="${userAvatarUrl}" alt="${user.name}" />`;
       }
